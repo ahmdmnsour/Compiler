@@ -21,11 +21,11 @@ class Scanner:
 
         while not self.is_eof():
             c = self.src[self.pointer]
+            self.pointer += 1
 
             if c.isspace():
-                self.pointer += 1
+                continue
             elif c.isalpha():
-                self.pointer += 1
                 while self.src[self.pointer].isnumeric() or self.src[self.pointer].isalpha():
                     c += self.src[self.pointer]
                     self.pointer += 1
@@ -34,10 +34,8 @@ class Scanner:
                 else:
                     self.tokens.append(("ID", c))
             elif self.is_special_character(c):
-                self.pointer += 1
                 self.tokens.append((self.is_special_character(c), c))
             elif self.is_operator(c):
-                self.pointer += 1
                 token_string = c + self.src[self.pointer]
                 if self.is_operator(token_string):
                     self.pointer += 1
@@ -45,7 +43,6 @@ class Scanner:
                 else:
                     self.tokens.append((self.is_operator(c), c))
             elif c.isnumeric():
-                self.pointer += 1
                 while self.src[self.pointer].isnumeric():
                     c += self.src[self.pointer]
                     self.pointer += 1
