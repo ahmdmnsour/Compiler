@@ -135,21 +135,22 @@ class Parser:
         if self.match("Semicolon"):
             return
         # *4+u;
-        if (
-            not self.match("Plus")
-            and not self.match("Mul")
-            and not self.match("Minus")
-            and not self.match("Div")
-        ):
-            self.error("Operator")
+        while self.tokens[self.current_index][0]!="Semicolon":
+                if (
+                    not self.match("Plus")
+                    and not self.match("Mul")
+                    and not self.match("Minus")
+                    and not self.match("Div")
+                ):
+                    self.error("Operator")
 
-        if not self.match("ID") and not self.match("Number"):
-            self.error("ID or Number")
+                if not self.match("ID") and not self.match("Number"):
+                    self.error("ID or Number")
 
         if not self.match("Semicolon"):
             self.error("Semicolon")
 
-    # check x++ ,x--
+    # check x++ ,x-- ,x=9; , x=8+9;
     def parse_assignment(self):
         if not self.match("ID"):
             self.error("ID")
@@ -165,7 +166,7 @@ class Parser:
                 return
             if not self.match("Semicolon"):
                 self.error("Semicolon")
-        if self.tokens[self.current_index][1] == "=":
+        if self.tokens[self.current_index][1] in ["=", "+=", "-=", "*=", "/="]:
             if (
                 not self.match("Assign")
                 and not self.match("NotEqu")
@@ -180,23 +181,24 @@ class Parser:
             if self.match("Semicolon"):
                 return
             # *4+u;
-            if (
-                not self.match("Plus")
-                and not self.match("Mul")
-                and not self.match("Minus")
-                and not self.match("Div")
-            ):
-                self.error("Operator")
+            while self.tokens[self.current_index][0]!="Semicolon":
+                if (
+                    not self.match("Plus")
+                    and not self.match("Mul")
+                    and not self.match("Minus")
+                    and not self.match("Div")
+                ):
+                    self.error("Operator")
 
-            if not self.match("ID") and not self.match("Number"):
-                self.error("ID or Number")
+                if not self.match("ID") and not self.match("Number"):
+                    self.error("ID or Number")
 
             if not self.match("Semicolon"):
                 self.error("Semicolon")
 
     # check expression x == > < >= <= y,number
     def parse_expression(self):
-        if not self.match("ID"):
+        if not self.match("ID") and not self.match("Number"):
             self.error("ID or Number")
 
         if (
@@ -210,8 +212,3 @@ class Parser:
 
         if not self.match("ID") and not self.match("Number"):
             self.error("ID or Number")
-
-
-# parser = Parser(tokens)
-# parsed_code = parser.parse()
-# print(parsed_code)

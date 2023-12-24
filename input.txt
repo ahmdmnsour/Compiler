@@ -4,18 +4,19 @@
 // fejfijfije
 
 int main() {
-    int x=10; /// frfrge
+    int x=10;
     if(x==3)
     {
-/* hyhyh */ 
         x=1;
     }
     else
     {
         x=0;
     }
+
     for(int i=0;i<10;i++){
         x++;
     }
+    
     return 0;
 }
