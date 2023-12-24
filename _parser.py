@@ -1,9 +1,3 @@
-class Token:
-    def __init__(self, token_type, value=None):
-        self.type = token_type
-        self.value = value
-
-
 class Parser:
     def __init__(self, tokens):
         self.tokens = tokens
@@ -11,7 +5,8 @@ class Parser:
 
     def parse(self):
         try:
-            self.parse_function()
+            while self.current_index < len(self.tokens):
+                self.parse_function()
             exit("Code is syntactically correct.")
         except SyntaxError as e:
             print(f"SyntaxError: {e}")

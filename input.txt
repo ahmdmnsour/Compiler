@@ -4,9 +4,12 @@
 // fejfijfije
 
 int main() {
-    int x=10;
+    int x=10; // fiejfoeofokefoioej
     if(x==3)
     {
+        /* frkfokr
+        fjrofkrof
+        \firjfjrojfjroejogrkeoifk */
         x=1;
     }
     else
@@ -19,4 +22,8 @@ int main() {
     }
     
     return 0;
+}
+
+int ddd () {
+    return 333;
 }
