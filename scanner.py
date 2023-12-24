@@ -19,10 +19,10 @@ class Scanner:
             c = self.src[self.pointer]
             self.pointer += 1
 
-            if self.except_comment():
+            if self.invalid_comment():
                 print("Invalid Comment")
                 return
-
+            
             if c.isspace():
                 continue
             elif c.isalpha():
@@ -48,7 +48,7 @@ class Scanner:
                     self.pointer += 1
                 self.tokens.append(("Number", c))
             else:
-                break
+                exit(f"Invalid character {c}")
 
         return self.tokens
 
@@ -117,7 +117,7 @@ class Scanner:
         else:
             return False
 
-    def except_comment(self):
+    def invalid_comment(self):
         while not self.is_eof() and self.src[self.pointer].isspace():
             self.pointer += 1
 

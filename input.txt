@@ -4,7 +4,7 @@
 // fejfijfije
 
 int main() {
-    int x=10; // fiejfoeofokefoioej
+    int x=10.2; // fiejfoeofokefoioej
     if(x==3)
     {
         /* frkfokr
