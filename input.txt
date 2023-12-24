@@ -3,17 +3,22 @@
   */
 
 int main() {
-    int x=10;
+
+    int         x=1+2+c;
+ 
+    
     if(x==3)
     {
-        x=1;
+        x=1+2+c;
     }
     else
     {
-        x=0
+        x=0;
     }
+
     for(int i=0;i<10;i++){
         x++;
     }
+    
     return 0;
 }
