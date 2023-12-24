@@ -11,7 +11,6 @@ if __name__ == '__main__':
     print("---------------Tokens---------------")
     print(tokens)
 
+    print("---------------Atoms---------------")
     p=Parser(tokens)
     parsed_code = p.parse()
-    print("---------------Atoms---------------")
-    print(parsed_code)
