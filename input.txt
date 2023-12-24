@@ -1,16 +1,18 @@
   /*
   	this is a comment and scanner will ignore it.
   */
+// fejfijfije
 
 int main() {
-    int x=10;
+    int x=10; /// frfrge
     if(x==3)
     {
+/* hyhyh */ 
         x=1;
     }
     else
     {
-        x=0
+        x=0;
     }
     for(int i=0;i<10;i++){
         x++;

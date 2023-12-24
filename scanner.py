@@ -15,13 +15,13 @@ class Scanner:
     def scan(self):
         token_string = ""
 
-        if self.except_comment():
-            print("Invalid Comment")
-            return
-
         while not self.is_eof():
             c = self.src[self.pointer]
             self.pointer += 1
+
+            if self.except_comment():
+                print("Invalid Comment")
+                return
 
             if c.isspace():
                 continue
