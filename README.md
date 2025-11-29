@@ -22,37 +22,6 @@ Compiler/
 └── README.md        # This file
 ```
 
-## Language Grammar
-
-The compiler supports the following language features:
-
-### Data Types
-- `int` - Integer type
-
-### Keywords
-- `const`, `else`, `if`, `int`, `return`, `void`, `while`, `true`, `false`, `for`
-
-### Operators
-- Arithmetic: `+`, `-`, `*`, `/`, `%`, `++`, `--`
-- Assignment: `=`, `+=`, `-=`, `*=`, `/=`, `%=`
-- Comparison: `==`, `!=`, `<`, `<=`, `>`, `>=`
-- Logical: `&&`, `||`, `!`
-
-### Special Characters
-- Parentheses: `(`, `)`
-- Braces: `{`, `}`
-- Brackets: `[`, `]`
-- Semicolon: `;`
-- Comma: `,`
-
-### Statements
-- Function declarations
-- Variable declarations
-- Assignment statements
-- If-else statements
-- For loops
-- Return statements
-
 ## Usage
 
 ### Basic Usage
