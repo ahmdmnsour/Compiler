@@ -63,33 +63,6 @@ python main.py
 
 The program will read from `input.txt` by default. To use a different file, modify the `file_path` variable in `main.py`.
 
-### Example Input
-
-```c
-int main() {
-    int x = 10;
-    if(x == 3) {
-        x = 1;
-    }
-    else {
-        x = 0;
-    }
-    
-    for(int i = 0; i < 10; i++) {
-        x++;
-    }
-    
-    return 0;
-}
-```
-
-### Output
-
-The compiler will output:
-1. **Tokens**: List of all tokens found during lexical analysis
-2. **Atoms**: Parsed tokens showing the structure of the code
-3. **Status**: Whether the code is syntactically correct or any errors encountered
-
 ## Error Handling
 
 The compiler provides detailed error messages:
@@ -127,23 +100,3 @@ All errors include line and column information when available.
 
 - Python 3.6 or higher
 - No external dependencies (uses only standard library)
-
-## Future Enhancements
-
-Potential improvements for the compiler:
-
-- [ ] Abstract Syntax Tree (AST) generation
-- [ ] Semantic analysis (type checking, symbol tables)
-- [ ] Code generation (targeting assembly or bytecode)
-- [ ] Support for more data types (float, char, string)
-- [ ] Function parameters and return types
-- [ ] Array support
-- [ ] While loops
-- [ ] Unit tests
-- [ ] Command-line argument parsing
-- [ ] Multiple output formats
-
-## License
-
-This is an educational project for learning compiler construction principles.
-
